@@ -7,45 +7,46 @@ export const MainView = () => {
     const [movies, setMovies] = useState([
         {
           id: 1,
-          title: "Eloquent JavaScript",
+          title: "Silence of the Lambs",
           image:
-            "https://images-na.ssl-images-amazon.com/images/I/51InjRPaF7L._SX377_BO1,204,203,200_.jpg",
-          author: "Marijn Haverbeke"
+            "https://m.media-amazon.com/images/M/MV5BNjNhZTk0ZmEtNjJhMi00YzFlLWE1MmEtYzM1M2ZmMGMwMTU4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg",
+          director: "Jonathan Demme"
         },
         {
           id: 2,
-          title: "Mastering JavaScript Functional Programming",
+          title: "The Lion King",
           image:
-            "https://images-na.ssl-images-amazon.com/images/I/51WAikRq37L._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
-          author: "Federico Kereki"
+            "https://m.media-amazon.com/images/M/MV5BYTYxNGMyZTYtMjE3MS00MzNjLWFjNmYtMDk3N2FmM2JiM2M1XkEyXkFqcGdeQXVyNjY5NDU4NzI@._V1_.jpg",
+          director: "Roger Allers"
         },
         {
           id: 3,
-          title: "JavaScript: The Good Parts",
+          title: "Inglorious Basterds",
           image:
-            "https://images-na.ssl-images-amazon.com/images/I/5131OWtQRaL._SX381_BO1,204,203,200_.jpg",
-          author: "Douglas Crockford"
+            "https://m.media-amazon.com/images/I/81+4I8lZZeL._AC_UF894,1000_QL80_.jpg",
+          director: "Quentin Tarantino"
         },
         {
           id: 4,
-          title: "JavaScript: The Definitive Guide",
+          title: "Django Unchained",
           image:
-            "https://images-na.ssl-images-amazon.com/images/I/51HbNW6RzhL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
-          author: "David Flanagan"
+            "https://image.tmdb.org/t/p/w500/szvidvi0Fo4j2gmMtk1sNe1rkzw.jpg",
+          director: "Quentin Tarantino"
         },
         {
           id: 5,
-          title: "The Road to React",
+          title: "Mrs. Doubtfire",
           image:
             "https://images-na.ssl-images-amazon.com/images/I/41MBLi5a4jL._SX384_BO1,204,203,200_.jpg",
-          author: "Robin Wieruch"
+          director: "Chris Columbus"
         }
       ]);
     
       const [selectedMovie, setSelectedMovie] = useState(null);
 
       if (selectedMovie) {
-        return <MovieView movie={selectedMovie} onBackClick={() => setSelectedBook(null)} />;
+        return <MovieView movie={selectedMovie} onBackClick={() => setSelectedBook(null)} /> //does a ')' need to go here? It is throwing an error.
+        ;
       }
     
       if (movies.length === 0) {
