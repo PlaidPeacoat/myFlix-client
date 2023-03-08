@@ -4,48 +4,31 @@ import { MovieView } from "../movie-view/movie-view";
 
 
 export const MainView = () => {
-    const [movies, setMovies] = useState([
-        {
-          id: 1,
-          title: "Silence of the Lambs",
-          image:
-            "https://m.media-amazon.com/images/M/MV5BNjNhZTk0ZmEtNjJhMi00YzFlLWE1MmEtYzM1M2ZmMGMwMTU4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg",
-          director: "Jonathan Demme"
-        },
-        {
-          id: 2,
-          title: "The Lion King",
-          image:
-            "https://m.media-amazon.com/images/M/MV5BYTYxNGMyZTYtMjE3MS00MzNjLWFjNmYtMDk3N2FmM2JiM2M1XkEyXkFqcGdeQXVyNjY5NDU4NzI@._V1_.jpg",
-          director: "Roger Allers"
-        },
-        {
-          id: 3,
-          title: "Inglorious Basterds",
-          image:
-            "https://m.media-amazon.com/images/I/81+4I8lZZeL._AC_UF894,1000_QL80_.jpg",
-          director: "Quentin Tarantino"
-        },
-        {
-          id: 4,
-          title: "Django Unchained",
-          image:
-            "https://image.tmdb.org/t/p/w500/szvidvi0Fo4j2gmMtk1sNe1rkzw.jpg",
-          director: "Quentin Tarantino"
-        },
-        {
-          id: 5,
-          title: "Mrs. Doubtfire",
-          image:
-            "https://images-na.ssl-images-amazon.com/images/I/41MBLi5a4jL._SX384_BO1,204,203,200_.jpg",
-          director: "Chris Columbus"
-        }
-      ]);
+    const [movies, setMovies] = useState([null]);
+    useEffect(() => {
+        fetch("https://openlibrary.org/search.json?q=star+wars")
+          .then((response) => response.json())
+          .then((data) => {
+            const moviesFromApi = data.docs.map((doc) => {
+              return {
+                id: doc.key,
+                title: doc.title,
+                image:
+    `https://covers.openlibrary.org/b/id/${doc.cover_i}-L.jpg`,
+                director: doc.director_name?.[0]
+              };
+            });
+    
+            setMovies(moviesFromApi);
+          });
+      }, []);
+    
+    
     
       const [selectedMovie, setSelectedMovie] = useState(null);
 
       if (selectedMovie) {
-        return <MovieView movie={selectedMovie} onBackClick={() => setSelectedBook(null)} /> //does a ')' need to go here? It is throwing an error.
+        return <MovieView movie={selectedMovie} onBackClick={() => setSelectedMovie(null)} /> //does a ')' need to go here? It is throwing an error.
         ;
       }
     
