@@ -15,9 +15,14 @@ import PropTypes from "prop-types";
 
   MovieCard.propTypes = {
     movie: PropTypes.shape({
-      title: PropTypes.string
+      title: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+      author: PropTypes.string,
+      genre: PropTypes.shape({
+      })
     }).isRequired,
     onMovieClick: PropTypes.func.isRequired
   };
+  
   
   
