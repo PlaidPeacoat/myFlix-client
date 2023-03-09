@@ -1,5 +1,3 @@
-console.log("hello")
-
 export const LoginView = ({ onLoggedIn }) => {
   const [username, setUsername] = useState("");
   const handleSubmit = (event) => {
