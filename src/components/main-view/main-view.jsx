@@ -3,92 +3,62 @@ import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 import { LoginView } from "../login-view/login-view";
 import { SignupView } from "../signup-view/signup-view";
+import Row from "react-bootstrap/Row";
 
-export const SignupView = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
-  const [birthday, setBirthday] = useState("");
+export const MainView = () => {
+  const [movies, setMovies] = useState([]);
+  const [selectedMovie, setSelectedMovie] = useState(null);
+  const [user, setUser] = useState(null);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  useEffect(() => {
+    fetch("https://openlibrary.org/search.json?q=star+wars")
+      .then((response) => response.json())
+      .then((data) => {
+        const moviesFromApi = data.docs.map((doc) => {
+          return {
+            id: doc.key,
+            title: doc.title,
+            image: `https://covers.openlibrary.org/b/id/${doc.cover_i}-L.jpg`,
+            author: doc.author_name?.[0]
+          };
+        });
 
-    const data = {
-      Username: username,
-      Password: password,
-      Email: email,
-      Birthday: birthday
-    };
-
-    fetch("SIGNUP_URL", {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-        "Content-Type": "application/json"
-      }
-    }).then((response) => {
-      if (response.ok) {
-        alert("Signup successful");
-        window.location.reload();
-      } else {
-        alert("Signup failed");
-      }
-    });
-  };
-
+        setMovies(moviesFromApi);
+      });
+  }, []);
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Username:
-        <input
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-          minLength="3"
-        />
-      </label>
-      <label>
-        Password:
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Email:
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Birthday:
-        <input
-          type="date"
-          value={birthday}
-          onChange={(e) => setBirthday(e.target.value)}
-          required
-        />
-      </label>
-      <button type="submit">Submit</button>
-    </form>
+      <Row> 
+        {!user ? (
+          <>
+            <LoginView onLoggedIn={(user) => setUser(user)} />
+            or
+            <SignupView />
+          </>
+        ) : selectedMovie ? (
+          <MovieView 
+            movie={selectedMovie} 
+            onBackClick={() => setSelectedMovie(null)} 
+          />
+        ) : movies.length === 0 ? (
+          <div>The list is empty!</div>
+        ) : (
+          <>
+            {movies.map((movie) => (
+              <MovieCard
+                key={movie.id}
+                movie={movie}
+                onMovieClick={(newSelectedMovie) => {
+                  setSelectedMovie(newSelectedMovie);
+                }}
+              />
+            ))}
+          </>
+        )}
+      </Row>
   );
 };
 
-
-export const MainView = () => {
-  const storedUser = JSON.parse(localStorage.getItem("user"));
-  const storedToken = localStorage.getItem("token");
-  const [user, setUser] = useState(storedUser? storedUser : null);
-  const [token, setToken] = useState(storedToken? storedToken : null);
-  const [movies, setMovies] = useState([]);
-  const [selectedMovie, setSelectedMovie] = useState(null);
 
 
 
@@ -111,14 +81,14 @@ export const MainView = () => {
 
   if (!user) {
     return (
-      <>
+      <Col md={5}>
         <LoginView onLoggedIn={(user, token) => {
           setUser(user);
           setToken(token);
         }} />
         or
         <SignupView />
-      </>
+      </Col>
     );
   }
 
@@ -126,7 +96,12 @@ export const MainView = () => {
 
   if (selectedMovie) {
     return (
-      <MovieView movie={selectedMovie} onBackClick={() => setSelectedMovie(null)} />
+      <Col md={8}>
+      <MovieView 
+      movie={selectedMovie} 
+      onBackClick={() => setSelectedMovie(null)} 
+      />
+      </Col>
     );
   }
 
@@ -136,17 +111,17 @@ export const MainView = () => {
 
   return (
     <div>
-      {movies.map((movie) => (
-        <MovieCard
-          key={movie.id}
-          movie={movie}
-          onMovieClick={(newSelectedMovie) => {
-            setSelectedMovie(newSelectedMovie);
-          }}
-        />
-      ))}
+     {movies.map((movie) => (
+            <Col className="mb-5" key={movie.id} md={3}>
+              <MovieCard
+                movie={movie}
+                onMovieClick={(newSelectedMovie) => {
+                  setSelectedMovie(newSelectedMovie);
+                }}
+              />
+            </Col>
+          ))}
     </div>
   );
-};
 
 <button onClick={() => { setUser(null); setToken(null); localStorage.clear(); }}>Logout</button>
