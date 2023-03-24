@@ -1,78 +1,86 @@
-import { useState, useEffect } from "react";
-import { MovieCard } from "../movie-card/movie-card";
-import { UpdateForm } from "./update-form";
-import { FavMovies } from "./fav-movies";
-import { Button, Container, Form, Row, Col, Card } from "react-bootstrap";
+import { useState } from "react";
 
-export const ProfileView = ({ user, movies }) => {
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 
-    const storedToken = localStorage.getItem("token");
-    const storedMovies = JSON.parse(localStorage.getItem("movies"))
-    const storedUser = localStorage.getItem("user");
-    // const {Username, Birthday, Email, FavoriteMovies} = user;
-    const [token] = useState(storedToken ? storedToken : null);
-    // const [userFavoriteMovies, setUserFavoriteMovies] = useState([]);
-    // const [updatedUser, setUpdatedUser] = useState(storedUser ? storedUser : null);
+export const SignupView = ({ onLoggedIn }) => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [birthday, setBirthday] = useState("");
 
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [email, setEmail] = useState('');
-    const [birthday, setBirthday] = useState("");
-    const [favoriteMovies, setFavoriteMovies] = useState([]);
+  const handleSubmit = (event) => {
+    // this prevents the default behavior of the form which is to reload the entire page
+    event.preventDefault();
 
-    const [allMovies] = useState(storedMovies ? storedMovies: movies);
-    const [filteredMovies, setFilteredMovies] = useState([]);
+    const data = {
+        Username: username,
+        Password: password,
+        Email: email,
+        Birthday: birthday
+      };
+  
+      fetch("https://movie-api-8cvs.onrender.com/users", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }).then((response) => {
+        if (response.ok) {
+          alert("Signup successful");
+          window.location.reload();
+        } else {
+          alert("Signup failed");
+        }
+      });
+    };
 
-
-// Show updated user on the profile
-const getUser = (token) => {
-  fetch(`https://movie-api-8cvs.onrender.com/profiles/${user.Username}`,{
-    method: "GET",
-    headers: { Authorization: `Bearer ${token}`},
-  }).then(response => response.json())
-  .then((response) => {
-    console.log("getUser response", response)
-    setUsername(response.Username);
-    setEmail(response.Email);
-    setPassword(response.Password);
-    setBirthday(response.Birthday);
-    setFavoriteMovies(response.FavoriteMovies)
-  })
-}
-console.log("userFavMov", favoriteMovies)
-
-
-useEffect(()=> {
-  getUser(token);
-},[])
-
-   
   return (
-    <Container>
-      <Row className= "mb-4">
-        <Col>
-          <Card>
-            <Card.Body>
-              <div>
-                <h4>User Details</h4>
-                <p>Username: {username}</p>
-                <p>Birthday: {birthday}</p>
-                <p>Email: {email}</p>
-              </div> 
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col >
-        <Card>
-          <Card.Body>
-            <UpdateForm user={user}/>
-          </Card.Body>
-        </Card>
-        </Col>
-      </Row>
-      <Row>
-        <FavMovies user={user} movies={movies}/>
-        </Row>
-    </Container>
-  )
+    <Form onSubmit={handleSubmit}>
+      <Form.Group controlId="SignupformUsername">
+        <Form.Label>Username:</Form.Label>
+        <Form.Control
+          type="text"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          required
+          minLength="5"
+        />
+      </Form.Group>
+
+      <Form.Group controlId="SignupformPassword">
+        <Form.Label>Password:</Form.Label>
+        <Form.Control
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+      </Form.Group>
+
+      <Form.Group controlId="SignupformEmail">
+        <Form.Label>Email:</Form.Label>
+        <Form.Control
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+      </Form.Group>
+
+      <Form.Group controlId="SignupformBirthday">
+        <Form.Label>Birthday:</Form.Label>
+        <Form.Control
+          type="date"
+          value={birthday}
+          onChange={(e) => setBirthday(e.target.value)}
+          required
+        />
+      </Form.Group>
+      <Button className= "mt-3" variant="primary" type="submit">
+      Sign Up
+      </Button>
+    </Form>
+  );
 };
