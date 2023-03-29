@@ -37,7 +37,7 @@ export const LoginView = ({ onLoggedIn }) => {
       alert("Something went wrong");
     });
   };
-console.log("this is a test")
+
   return (
     <Form onSubmit={handleSubmit}>
       <Form.Group controlId="LoginformUsername">
