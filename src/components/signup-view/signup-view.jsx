@@ -3,8 +3,6 @@ import { Navigate, Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import { ButtonSpinner } from '../button-spinner/button-spinner.jsx';
 
 function SignupView() {
