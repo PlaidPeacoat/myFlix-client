@@ -65,7 +65,7 @@ function MainView() {
   // Logic to manage TopMovies list (needed in both ProfileView and MovieCard)
   const addMovie = function (movieId) {
     fetch(
-      `"https://movieapialexsears.herokuapp.com/movies/users/${user.Username}/topMovies/${movieId}`,
+      `"https://movie-api-asears.onrender.com/movies/users/${user.Username}/topMovies/${movieId}`,
       {
         method: 'POST',
         headers: {
@@ -102,7 +102,7 @@ function MainView() {
 
   const removeMovie = function (movieId) {
     fetch(
-      `"https://movieapialexsears.herokuapp.com/movies/users/${user.Username}/topMovies/${movieId}`,
+      `"https://movie-api-asears.onrender.com/movies/users/${user.Username}/topMovies/${movieId}`,
       {
         method: 'DELETE',
         headers: {
@@ -150,7 +150,7 @@ function MainView() {
       }
       setLoading(true);
 
-      fetch('https://movieapialexsears.herokuapp.com/movies', {
+      fetch('https://movie-api-asears.onrender.com/movies', {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then(function (response) {
