@@ -31,7 +31,7 @@ function SignupView() {
       Birthday: birthday,
     };
 
-    fetch('https://myflix-movie-app-elenauj.onrender.com/users', {
+    fetch('https://movie-api-asears.onrender.com/users', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
