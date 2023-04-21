@@ -4,6 +4,7 @@ import { Button, Row, Col } from "react-bootstrap";
 import "./movie-view.scss";
 import { useState } from "react";
 import { useEffect } from "react";
+import { baseURL } from "../../api/api";
 
 export const MovieView = ({ movies, username, favoriteMovies }) => {
   const { movieId } = useParams();
