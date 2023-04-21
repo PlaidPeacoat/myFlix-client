@@ -1,7 +1,7 @@
 import { useState } from "react";
-
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { baseURL } from "../../api/api";
 
 export const LoginView = ({ onLoggedIn }) => {
   const [username, setUsername] = useState("");
@@ -16,7 +16,7 @@ export const LoginView = ({ onLoggedIn }) => {
       secret: password
     };
 
-    fetch(`https://movie-api-asears.onrender.com/login?Username=${username}&Password=${password}`, {
+    fetch(`${baseURL}/login?Username=${username}&Password=${password}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

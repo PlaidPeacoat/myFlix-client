@@ -19,7 +19,7 @@ console.log(username)
 
 // AddFavMovie
 const addFavoriteMovie = async() => {
-  const favoriteMovie = await fetch(`https://movieapialexsears.herokuapp.com/users/${username}/movies/${movieId}`,
+  const favoriteMovie = await fetch(`${baseURL}users/${username}/movies/${movieId}`,
     {
       method: "POST",
       headers: { 
