@@ -143,8 +143,8 @@
     }
   }
 })({"1xC6H":[function(require,module,exports) {
-var Refresh = require("f1ddc5e53902b8db");
-var ErrorOverlay = require("cc548b39993613bb");
+var Refresh = require("7f45fd764e24857a");
+var ErrorOverlay = require("e0ec6dd98615e9b");
 Refresh.injectIntoGlobalHook(window);
 window.$RefreshReg$ = function() {};
 window.$RefreshSig$ = function() {
@@ -163,11 +163,11 @@ window.addEventListener("parcelhmraccept", ()=>{
     ErrorOverlay.dismissRuntimeErrors();
 });
 
-},{"f1ddc5e53902b8db":"786KC","cc548b39993613bb":"1dldy"}],"786KC":[function(require,module,exports) {
+},{"7f45fd764e24857a":"786KC","e0ec6dd98615e9b":"1dldy"}],"786KC":[function(require,module,exports) {
 "use strict";
-module.exports = require("c157478fd64386c1");
+module.exports = require("fa332049ddf4e9c3");
 
-},{"c157478fd64386c1":"hdge7"}],"hdge7":[function(require,module,exports) {
+},{"fa332049ddf4e9c3":"hdge7"}],"hdge7":[function(require,module,exports) {
 /** @license React v0.9.0
  * react-refresh-runtime.development.js
  *
@@ -628,7 +628,7 @@ module.exports = require("c157478fd64386c1");
 })();
 
 },{}],"1dldy":[function(require,module,exports) {
-var process = require("e8cf4a22357715fe");
+var process = require("ba79ba04a0842ae1");
 !function(e, t) {
     module.exports = t();
 }(window, function() {
@@ -2358,7 +2358,7 @@ var process = require("e8cf4a22357715fe");
     ]);
 });
 
-},{"e8cf4a22357715fe":"d5jf4"}],"d5jf4":[function(require,module,exports) {
+},{"ba79ba04a0842ae1":"d5jf4"}],"d5jf4":[function(require,module,exports) {
 // shim for using process in browser
 var process = module.exports = {};
 // cached from whatever global is present so that test runners that stub it
@@ -2962,9 +2962,9 @@ $RefreshReg$(_c, "App");
 }
 },{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","./components/main-view/main-view":"4gflv","react-bootstrap/Container":"hEdsw","./index.scss":"lJZlQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
 "use strict";
-module.exports = require("f9a883c78bbb9cb3");
+module.exports = require("67dda73cf47854d");
 
-},{"f9a883c78bbb9cb3":"48uCM"}],"48uCM":[function(require,module,exports) {
+},{"67dda73cf47854d":"48uCM"}],"48uCM":[function(require,module,exports) {
 /**
  * @license React
  * react-jsx-dev-runtime.development.js
@@ -2976,7 +2976,7 @@ module.exports = require("f9a883c78bbb9cb3");
  */ "use strict";
 (function() {
     "use strict";
-    var React = require("a7a8f49972aeea9e");
+    var React = require("b10ec97801bd4d49");
     // ATTENTION
     // When adding new symbols to this file,
     // Please consider also adding to 'react-devtools-shared/src/backend/ReactSymbols'
@@ -3795,11 +3795,11 @@ module.exports = require("f9a883c78bbb9cb3");
     exports.jsxDEV = jsxDEV$1;
 })();
 
-},{"a7a8f49972aeea9e":"21dqq"}],"21dqq":[function(require,module,exports) {
+},{"b10ec97801bd4d49":"21dqq"}],"21dqq":[function(require,module,exports) {
 "use strict";
-module.exports = require("3b8436ff6c444981");
+module.exports = require("35fb8cf5dca19213");
 
-},{"3b8436ff6c444981":"6YvXz"}],"6YvXz":[function(require,module,exports) {
+},{"35fb8cf5dca19213":"6YvXz"}],"6YvXz":[function(require,module,exports) {
 /**
  * @license React
  * react.development.js
@@ -5667,7 +5667,7 @@ module.exports = require("3b8436ff6c444981");
 
 },{}],"lOjBx":[function(require,module,exports) {
 "use strict";
-var m = require("e8984637b585c990");
+var m = require("5d69825bfc21737d");
 var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
 exports.createRoot = function(c, o) {
     i.usingClientEntryPoint = true;
@@ -5686,7 +5686,7 @@ exports.hydrateRoot = function(c, h, o) {
     }
 };
 
-},{"e8984637b585c990":"j6uA9"}],"j6uA9":[function(require,module,exports) {
+},{"5d69825bfc21737d":"j6uA9"}],"j6uA9":[function(require,module,exports) {
 "use strict";
 function checkDCE() {
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === "undefined" || typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== "function") return;
@@ -5700,9 +5700,9 @@ function checkDCE() {
     // a false positive.
     throw new Error("^_^");
 }
-module.exports = require("8af53b7667d0dec8");
+module.exports = require("7ecbb49c854785dd");
 
-},{"8af53b7667d0dec8":"3iA9v"}],"3iA9v":[function(require,module,exports) {
+},{"7ecbb49c854785dd":"3iA9v"}],"3iA9v":[function(require,module,exports) {
 /**
  * @license React
  * react-dom.development.js
@@ -5715,8 +5715,8 @@ module.exports = require("8af53b7667d0dec8");
 (function() {
     "use strict";
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
-    var React = require("cb3c1dba233384ad");
-    var Scheduler = require("87217b13b6c48197");
+    var React = require("40bbb28a9cab9c9a");
+    var Scheduler = require("d4cee45b912e459e");
     var ReactSharedInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
     var suppressWarning = false;
     function setSuppressWarning(newSuppressWarning) {
@@ -26687,11 +26687,11 @@ module.exports = require("8af53b7667d0dec8");
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function") __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
 })();
 
-},{"cb3c1dba233384ad":"21dqq","87217b13b6c48197":"juvHo"}],"juvHo":[function(require,module,exports) {
+},{"40bbb28a9cab9c9a":"21dqq","d4cee45b912e459e":"juvHo"}],"juvHo":[function(require,module,exports) {
 "use strict";
-module.exports = require("8973873b7058f1bc");
+module.exports = require("41ea38d2c56df8c5");
 
-},{"8973873b7058f1bc":"RqdIf"}],"RqdIf":[function(require,module,exports) {
+},{"41ea38d2c56df8c5":"RqdIf"}],"RqdIf":[function(require,module,exports) {
 /**
  * @license React
  * scheduler.development.js
@@ -32807,9 +32807,9 @@ exports.default = ThemeProvider;
 
 },{"react":"21dqq","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6AEwr":[function(require,module,exports) {
 "use strict";
-module.exports = require("90f2eaf7f1f33ffd");
+module.exports = require("76240f6e3b073327");
 
-},{"90f2eaf7f1f33ffd":"kujY4"}],"kujY4":[function(require,module,exports) {
+},{"76240f6e3b073327":"kujY4"}],"kujY4":[function(require,module,exports) {
 /**
  * @license React
  * react-jsx-runtime.development.js
@@ -32821,7 +32821,7 @@ module.exports = require("90f2eaf7f1f33ffd");
  */ "use strict";
 (function() {
     "use strict";
-    var React = require("9b267432d22b2bd2");
+    var React = require("aa41cebbe6e3183a");
     // ATTENTION
     // When adding new symbols to this file,
     // Please consider also adding to 'react-devtools-shared/src/backend/ReactSymbols'
@@ -33652,7 +33652,7 @@ module.exports = require("90f2eaf7f1f33ffd");
     exports.jsxs = jsxs;
 })();
 
-},{"9b267432d22b2bd2":"21dqq"}],"2L2I6":[function(require,module,exports) {
+},{"aa41cebbe6e3183a":"21dqq"}],"2L2I6":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "useCol", ()=>useCol);
@@ -34080,17 +34080,17 @@ exports.default = Object.assign(Form, {
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
- */ var ReactIs = require("7f7920e47a3525bc");
+ */ var ReactIs = require("3171be4d55bed819");
 // By explicitly using `prop-types` you are opting into new development behavior.
 // http://fb.me/prop-types-in-prod
 var throwOnDirectAccess = true;
-module.exports = require("4e39d1cc9bcb6d6a")(ReactIs.isElement, throwOnDirectAccess);
+module.exports = require("10c6ccad384ed13d")(ReactIs.isElement, throwOnDirectAccess);
 
-},{"7f7920e47a3525bc":"7EuwB","4e39d1cc9bcb6d6a":"bBUgD"}],"7EuwB":[function(require,module,exports) {
+},{"3171be4d55bed819":"7EuwB","10c6ccad384ed13d":"bBUgD"}],"7EuwB":[function(require,module,exports) {
 "use strict";
-module.exports = require("bd507c91a656d350");
+module.exports = require("2a7d15da989d4488");
 
-},{"bd507c91a656d350":"5DsXl"}],"5DsXl":[function(require,module,exports) {
+},{"2a7d15da989d4488":"5DsXl"}],"5DsXl":[function(require,module,exports) {
 /** @license React v16.13.1
  * react-is.development.js
  *
@@ -34254,11 +34254,11 @@ module.exports = require("bd507c91a656d350");
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */ "use strict";
-var ReactIs = require("6c95a1a9fe202938");
-var assign = require("ac25bc38644db3fa");
-var ReactPropTypesSecret = require("de9ea8f7a685cc16");
-var has = require("a2396a4837fe8e36");
-var checkPropTypes = require("62cddcc0b58ceeba");
+var ReactIs = require("46f9230f967248b3");
+var assign = require("6c60c7e34717bb6");
+var ReactPropTypesSecret = require("a03c8deb35e30029");
+var has = require("526fd8220d497ce1");
+var checkPropTypes = require("561f30bf0bda10f6");
 var printWarning = function() {};
 printWarning = function(text) {
     var message = "Warning: " + text;
@@ -34685,7 +34685,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
     return ReactPropTypes;
 };
 
-},{"6c95a1a9fe202938":"7EuwB","ac25bc38644db3fa":"7OXxh","de9ea8f7a685cc16":"jZTZJ","a2396a4837fe8e36":"fqKuf","62cddcc0b58ceeba":"5VwyJ"}],"7OXxh":[function(require,module,exports) {
+},{"46f9230f967248b3":"7EuwB","6c60c7e34717bb6":"7OXxh","a03c8deb35e30029":"jZTZJ","526fd8220d497ce1":"fqKuf","561f30bf0bda10f6":"5VwyJ"}],"7OXxh":[function(require,module,exports) {
 /*
 object-assign
 (c) Sindre Sorhus
@@ -34761,9 +34761,9 @@ module.exports = Function.call.bind(Object.prototype.hasOwnProperty);
  * LICENSE file in the root directory of this source tree.
  */ "use strict";
 var printWarning = function() {};
-var ReactPropTypesSecret = require("b667ce55dbef84c3");
+var ReactPropTypesSecret = require("70c527a7220ddf11");
 var loggedTypeFailures = {};
-var has = require("2678eeac978ece5");
+var has = require("b7b409d9a9af9b3");
 printWarning = function(text) {
     var message = "Warning: " + text;
     if (typeof console !== "undefined") console.error(message);
@@ -34821,7 +34821,7 @@ printWarning = function(text) {
 };
 module.exports = checkPropTypes;
 
-},{"b667ce55dbef84c3":"jZTZJ","2678eeac978ece5":"fqKuf"}],"idkr0":[function(require,module,exports) {
+},{"70c527a7220ddf11":"jZTZJ","b7b409d9a9af9b3":"fqKuf"}],"idkr0":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -35326,11 +35326,11 @@ exports.default = FloatingLabel;
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "baseURL", ()=>baseURL);
-let baseURL = "https://movie-api-asears.onrender.com";
+let baseURL = "http://localhost:8080";
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"km3Ru":[function(require,module,exports) {
 "use strict";
-var Refresh = require("a3351d4ba09cb280");
+var Refresh = require("f8e7a5fcbe9b8dea");
 function debounce(func, delay) {
     {
         let timeout = undefined;
@@ -35461,7 +35461,7 @@ function registerExportsForReactRefresh(module1) {
     }
 }
 
-},{"a3351d4ba09cb280":"786KC"}],"bwuIu":[function(require,module,exports) {
+},{"f8e7a5fcbe9b8dea":"786KC"}],"bwuIu":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$67b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -44139,7 +44139,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.default = all;
-var _createChainableTypeChecker = require("7f83cd4155e02357");
+var _createChainableTypeChecker = require("a3b3d819d07f30bb");
 var _createChainableTypeChecker2 = _interopRequireDefault(_createChainableTypeChecker);
 function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
@@ -44162,7 +44162,7 @@ function all() {
 }
 module.exports = exports["default"];
 
-},{"7f83cd4155e02357":"1m8lT"}],"1m8lT":[function(require,module,exports) {
+},{"a3b3d819d07f30bb":"1m8lT"}],"1m8lT":[function(require,module,exports) {
 "use strict";
 Object.defineProperty(exports, "__esModule", {
     value: true
