@@ -3,6 +3,8 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { baseURL } from "../../api/api";
 
+console.log("baseURL: ", baseURL)
+
 export const LoginView = ({ onLoggedIn }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -34,7 +36,7 @@ export const LoginView = ({ onLoggedIn }) => {
       }
     })
     .catch((e) => {
-      alert("Something went wrong");
+      console.trace(e);
     });
   };
 
