@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button, Container, Form, Row, Col, Card } from "react-bootstrap";
+import { baseURL } from "../../api/api";
 
 export const UpdateForm = ({ user }) => {
 
@@ -24,7 +25,7 @@ export const UpdateForm = ({ user }) => {
           Birthday: birthday
         };
     console.log(data)
-        const updateUser = await fetch(`https://movie-api-8cvs.onrender.com/users/${user.Username}`, {
+        const updateUser = await fetch(`${baseURL}/users/${user.Username}`, {
           method: "PUT",
           body: JSON.stringify(data),
           headers: {
@@ -46,7 +47,7 @@ export const UpdateForm = ({ user }) => {
     
       const handleDeregister = () => {
     
-        fetch(`https://movie-api-8cvs.onrender.com/users/${user.Username}`, {
+        fetch(`${baseURL}/users/${user.Username}`, {
           method: "DELETE",
           headers: {
             Authorization: `Bearer ${token}`,

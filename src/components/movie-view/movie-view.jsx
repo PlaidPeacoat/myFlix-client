@@ -43,7 +43,7 @@ const addFavoriteMovie = async() => {
   }
 
   const removeFavoriteMovie = async() => {
-    const favoriteMovie = await fetch (`https://movieapialexsears.herokuapp.com/users/${username}/movies/${movieId}`,
+    const favoriteMovie = await fetch (`${baseURL}/users/${username}/movies/${movieId}`,
     {
       method: "DELETE",
       headers: {

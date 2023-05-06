@@ -11,6 +11,8 @@ import { NavigationBar } from '../navigation-bar/navigation-bar.jsx';
 import { ProfileView } from '../profile-view/profile-view.jsx';
 import { SearchBar } from './search-bar.jsx';
 import { SignupView } from '../signup-view/signup-view.jsx';
+import { toast } from 'react-toastify';
+import { baseURL } from "../../api/api";
 
 function MainView() {
   // Checks for stored user and token first
@@ -65,7 +67,7 @@ function MainView() {
   // Logic to manage TopMovies list (needed in both ProfileView and MovieCard)
   const addMovie = function (movieId) {
     fetch(
-      `"https://movie-api-asears.onrender.com/movies/users/${user.Username}/topMovies/${movieId}`,
+      `${baseURL}/movies/users/${user.Username}/topMovies/${movieId}`,
       {
         method: 'POST',
         headers: {
@@ -102,7 +104,7 @@ function MainView() {
 
   const removeMovie = function (movieId) {
     fetch(
-      `"https://movie-api-asears.onrender.com/movies/users/${user.Username}/topMovies/${movieId}`,
+      `${baseURL}/movies/users/${user.Username}/topMovies/${movieId}`,
       {
         method: 'DELETE',
         headers: {
@@ -150,7 +152,7 @@ function MainView() {
       }
       setLoading(true);
 
-      fetch('https://movie-api-asears.onrender.com/movies', {
+      fetch(`${baseURL}/movies`, {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then(function (response) {
@@ -164,6 +166,7 @@ function MainView() {
           }
         })
         .then(function (movies) {
+          console.log("movies", movies);
           // Sort movies in alphabetical order, and featured movies first
           // Sort method compares every object with each other - if they have the same value for featured, they will be compared by title.
           let sortedMovies = movies.sort(function (a, b) {

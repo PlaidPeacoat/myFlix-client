@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button, Col, Card, Link } from "react-bootstrap";
 import { ProfileView } from "../profile-view/profile-view";
 import { MovieCard } from "../movie-card/movie-card";
+import { baseURL } from "../../api/api";
 
 export const FavMovies = ({user, movies}) => {
     const storedToken = localStorage.getItem("token");
@@ -21,7 +22,7 @@ export const FavMovies = ({user, movies}) => {
 
     // Show updated user on the profile
 const getUser = (token) => {
-    fetch(`https://movie-api-8cvs.onrender.com/profiles/${user.Username}`,{
+    fetch(`${baseURL}/profiles/${user.Username}`,{
       method: "GET",
       headers: { Authorization: `Bearer ${token}`},
     }).then(response => response.json())

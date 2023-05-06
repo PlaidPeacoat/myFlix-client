@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { baseURL } from "../../api/api";
 
 export const ProfileView = ({ onLoggedIn }) => {
   const [username, setUsername] = useState("");
@@ -20,7 +21,7 @@ export const ProfileView = ({ onLoggedIn }) => {
         Birthday: birthday
       };
   
-      fetch("https://movie-api-8cvs.onrender.com/users", {
+      fetch(`${baseURL}.com/users`, {
         method: "POST",
         body: JSON.stringify(data),
         headers: {

@@ -3,6 +3,7 @@ import { Navigate, Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
+import { baseURL } from "../../api/api";
 
 function SignupView() {
   const [username, setUsername] = useState('');
@@ -31,7 +32,7 @@ function SignupView() {
       Birthday: birthday,
     };
 
-    fetch('https://movie-api-asears.onrender.com/users', {
+    fetch(`${baseURL}/users`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
