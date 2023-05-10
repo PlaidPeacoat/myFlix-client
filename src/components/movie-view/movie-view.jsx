@@ -88,7 +88,7 @@ console.log("movieExists", movieExists)
     return (
       <Row className="movie-view">
       <Col md={6} className="movie-poster"  >
-        <img className="movie-img" crossOrigin="anonymous" src={movie.image} />
+        <img className="movie-img" crossOrigin="anonymous" src={movie.Image} />
       </Col>
       <Col md={6}>
         <div className="movie-title">
@@ -123,3 +123,5 @@ console.log("movieExists", movieExists)
     </Row>
     );
   };
+
+  export default MovieView;

@@ -266,7 +266,7 @@ function MainView() {
                             lg={3}
                             xl={2}
                           >
-                            <MovieCard movie={movie} />
+                            {/* <MovieCard movie={movie} /> */}
                           </Col>
                         );
                       })}
