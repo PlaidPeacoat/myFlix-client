@@ -50,6 +50,7 @@ function MainView() {
           const movieLowerCase = movie.Title.toLowerCase();
           const directorLowerCase = movie.Director.Name.toLowerCase();
           const genreLowerCase = movie.Genre.Name.toLowerCase();
+          const imageLowerCase = movie.Image.toLowerCase();
           const userQueryLowerCase = userQuery.toLowerCase();
 
           return (
@@ -166,10 +167,11 @@ function MainView() {
           }
         })
         .then(function (movies) {
-          console.log("movies", movies);
+          console.log("movies from mainview", movies);
           // Sort movies in alphabetical order, and featured movies first
           // Sort method compares every object with each other - if they have the same value for featured, they will be compared by title.
           let sortedMovies = movies.sort(function (a, b) {
+            console.log("sortedMovies", sortedMovies)
             if (a.Featured === b.Featured) {
               return a.Title.localeCompare(b.Title);
             }
@@ -180,9 +182,10 @@ function MainView() {
               return 1;
             }
           });
-          setMovies(sortedMovies);
+          // setMovies(sortedMovies);
         })
         .catch(function (error) {
+          console.trace(error);
           setLoading(false);
           if (error.message) {
             toast.error(error.message);

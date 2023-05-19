@@ -27223,6 +27223,7 @@ function MainView() {
                 const movieLowerCase = movie.Title.toLowerCase();
                 const directorLowerCase = movie.Director.Name.toLowerCase();
                 const genreLowerCase = movie.Genre.Name.toLowerCase();
+                const imageLowerCase = movie.Image.toLowerCase();
                 const userQueryLowerCase = userQuery.toLowerCase();
                 return movieLowerCase.includes(userQueryLowerCase) || directorLowerCase.includes(userQueryLowerCase) || genreLowerCase.includes(userQueryLowerCase);
             });
@@ -27289,17 +27290,19 @@ function MainView() {
             if (response.status === 401) throw new Error("Sorry, you're not authorized to access this resource. ");
             else if (response.ok) return response.json();
         }).then(function(movies) {
-            console.log("movies", movies);
+            console.log("movies from mainview", movies);
             // Sort movies in alphabetical order, and featured movies first
             // Sort method compares every object with each other - if they have the same value for featured, they will be compared by title.
             let sortedMovies = movies.sort(function(a, b) {
+                console.log("sortedMovies", sortedMovies);
                 if (a.Featured === b.Featured) return a.Title.localeCompare(b.Title);
                 // If they do not have the same Featured value, the featured movie gets a smaller value than the unfeatured one and comes first
                 if (a.Featured) return -1;
                 else return 1;
             });
-            setMovies(sortedMovies);
+        // setMovies(sortedMovies);
         }).catch(function(error) {
+            console.trace(error);
             setLoading(false);
             if (error.message) (0, _reactToastify.toast).error(error.message);
             else (0, _reactToastify.toast).error("An error occurred while trying to delete. Please try again later.");
@@ -27317,7 +27320,7 @@ function MainView() {
                 user: user
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 204,
+                lineNumber: 207,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _containerDefault.default), {
@@ -27342,7 +27345,7 @@ function MainView() {
                                 }, void 0, false)
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 208,
+                                lineNumber: 211,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27357,7 +27360,7 @@ function MainView() {
                                 }, void 0, false)
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 228,
+                                lineNumber: 231,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27403,7 +27406,7 @@ function MainView() {
                                 }, void 0, true)
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 243,
+                                lineNumber: 246,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27423,7 +27426,7 @@ function MainView() {
                                 }, void 0, false)
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 296,
+                                lineNumber: 299,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27445,29 +27448,29 @@ function MainView() {
                                 }, void 0, false)
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 316,
+                                lineNumber: 319,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 207,
+                        lineNumber: 210,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 206,
+                    lineNumber: 209,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 205,
+                lineNumber: 208,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 203,
+        lineNumber: 206,
         columnNumber: 5
     }, this));
 }
