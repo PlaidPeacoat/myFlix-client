@@ -10,8 +10,7 @@ export const MovieView = ({ movies, username, favoriteMovies }) => {
   const { movieId } = useParams();
   const storedToken = localStorage.getItem("token");
   const storedUser = JSON.parse(localStorage.getItem("user"));
-  const movie = movies.find((m) => m.id === movieId);
-
+  const movie = movies.find((m) => m._id === movieId);
   const [movieExists, setMovieExists] = useState(false);
   const [disableRemove, setDisableRemove] = useState(true)
   const [userFavoriteMovies, setUserFavoriteMovies] = useState(storedUser.FavoriteMovies ? storedUser.FavoriteMovies: favoriteMovies);
@@ -88,7 +87,7 @@ console.log("movieExists", movieExists)
     return (
       <Row className="movie-view">
       <Col md={6} className="movie-poster"  >
-        <img className="movie-img" crossOrigin="anonymous" src={movie.Image} />
+        <img className="movie-img" crossOrigin="anonymous" src={movie.image} />
       </Col>
       <Col md={6}>
         <div className="movie-title">

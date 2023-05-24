@@ -291,13 +291,15 @@ function MainView() {
                       {movies.map(function (movie) {
                         return (
                           <Col
-                            className="mb-4"
-                            key={movie._id}
-                            xs={6}
-                            md={4}
-                            lg={3}
-                            xl={2}
-                          >
+                          xs={12}
+                          sm={6}
+                          md={4}
+                          key={movie._id}
+                          className="mb-4 movie-col"
+                          style={{
+                            paddingTop: '55px',
+                          }}
+                        >
                             <MovieCard movie={movie} />
                           </Col>
                         );
