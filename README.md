@@ -22,3 +22,6 @@ The objective of this project was to build the client-side of the myFlix app usi
 ## Link to hosted project
 
 https://main--myflix-a-sears.netlify.app
+
+## Screenshot
+![image](https://github.com/PlaidPeacoat/myFlix-client/assets/114315812/c82375ff-6ea2-4110-aaec-34fc86397ac5)
