@@ -1,1 +1,1 @@
-export let baseURL = "https://myflix-a-sears.netlify.app"
+export let baseURL = "https://movie-api-asears.onrender.com"
